@@ -1,18 +1,19 @@
 <?php
-    require_once  __DIR__ . '/system/DatabaseConnector.php';
-    $title = 'Home - ';
-    include  __DIR__ . '/system/inc/head.php';
-    include  __DIR__ . '/system/inc/topnav.php';
+   require_once  __DIR__ . '/system/DatabaseConnector.php';
+   $title = 'Home - ';
+   include  __DIR__ . '/system/inc/head.php';
+   include  __DIR__ . '/system/inc/topnav.php';
 ?>
-    <!--Hero start-->
-    <section class="position-relative py-10">
-        <video class="w-100" autoplay muted loop style="object-fit: cover" playsinline>
+
+   <!--Hero start-->
+   <section class="position-relative py-10">
+      <video class="w-100" autoplay muted loop style="object-fit: cover" playsinline>
             <source src="<?= PROOT; ?>assets/media/hero.mp4" type="video/mp4" />
         </video>
         <div class="container position-relative py-lg-10" data-cue="fadeIn">
             <div class="row py-lg-10 justify-content-center text-center">
-                <div class="col-lg-9 col-12">
-                    <div class="d-flex flex-column gap-6">
+                  <div class="col-lg-9 col-12">
+                     <div class="d-flex flex-column gap-6">
                         <div class="d-flex flex-column gap-4">
                             <h1 class="text-white-stable display-4 mb-0">Embarking On A Journey Of Mining Mastery</h1>
                             <p class="mb-0 text-white-50 lead px-lg-10">
@@ -35,27 +36,124 @@
                   </div>
                </div>
             </div>
-         </section>
-         <!--Hero end-->
+        </section>
+        <!--Hero end-->
 
-         <!--Service we offer start-->
-         <section class="py-xl-9 py-5" data-cue="fadeIn">
+        <section class="my-xl-9 my-5" data-cue="fadeIn">
             <div class="container">
                <div class="row">
-                  <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-12">
-                     <div class="text-center mb-xl-9 mb-5">
-                        <small class="text-uppercase ls-md fw-semibold text-primary">Service We Offer</small>
-                        <h2 class="mb-0 mt-3 px-xxl-8">Comprehensive Suite of Cutting-Edge IT Services.</h2>
-                     </div>
+                    <div class="col-lg-6 offset-lg-3" data-cue="fadeIn">
+                        <div class="text-center mb-xl-7 mb-5">
+                            <h2 class="h1 mb-3">Latest News & Updates</h2>
+                            <p class="mb-0">At least, not exclusively. Reduced recruiting costs, more efficient and effective communication.</p>
+                        </div>
+                    </div>
+               </div>
+               <!-- Blog Card -->
+               <div class="table-responsive-lg">
+                    <div class="row g-5 flex-nowrap pb-4 pb-lg-0 me-5 me-lg-0">
+                        <article class="col-lg-4 col-md-6 col-12" data-cue="zoomIn">
+                            <figure class="mb-4 zoom-img">
+                                <a href="./blog-single.html">
+                                    <img src="<?= PROOT; ?>assets/media/blog/b-1.png" alt="blog" class="img-fluid rounded-3" />
+                                </a>
+                            </figure>
+
+                        <a href="#!" class="badge bg-primary-subtle text-primary-emphasis rounded-pill text-uppercase">Startup</a>
+                        <h3 class="my-3 lh-base h4">
+                           <a href="./blog-single.html" class="text-reset">You will destroy yourself financially if you save</a>
+                        </h3>
+                        <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
+                           <div class="d-flex align-items-center">
+                              <img src="<?= PROOT; ?>assets/media/avatar.png" alt="Avatar" class="avatar avatar-xs rounded-circle" />
+                              <div class="ms-2">
+                                 <a href="#" class="text-reset fs-6">Sandip Chauhan</a>
+                              </div>
+                           </div>
+                           <div class="ms-3"><span class="fs-6">Nov 26, 2023</span></div>
+                        </div>
+                     </article>
+                     <article class="col-lg-4 col-md-6 col-12" data-cue="zoomIn">
+                        <figure class="mb-4 zoom-img">
+                           <a href="./blog-single.html">
+                              <img src="<?= PROOT; ?>assets/media/blog/b-2.png" alt="blog" class="img-fluid rounded-3" />
+                           </a>
+                        </figure>
+
+                        <a href="#!" class="badge bg-warning-subtle text-warning-emphasis rounded-pill text-uppercase">Business</a>
+                        <h3 class="my-3 lh-base h4">
+                           <a href="./blog-single.html" class="text-reset">Block Template for startup business</a>
+                        </h3>
+                        <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
+                           <div class="d-flex align-items-center">
+                              <img src="<?= PROOT; ?>assets/media/avatar.png" alt="Avatar" class="avatar avatar-xs rounded-circle" />
+                              <div class="ms-2">
+                                 <a href="#" class="text-reset fs-6">Anita Parmar</a>
+                              </div>
+                           </div>
+                           <div class="ms-3"><span class="fs-6">Nov 21, 2023</span></div>
+                        </div>
+                     </article>
+                     <article class="col-lg-4 col-md-6 col-12" data-cue="zoomIn">
+                        <figure class="mb-4 zoom-img">
+                           <a href="./blog-single.html">
+                              <img src="<?= PROOT; ?>assets/media/blog/b-4.jpg" alt="blog" class="img-fluid rounded-3" />
+                           </a>
+                        </figure>
+
+                        <a href="#!" class="badge bg-success-subtle text-success-emphasis rounded-pill text-uppercase">Digital</a>
+                        <h4 class="my-3 lh-base">
+                           <a href="./blog-single.html" class="text-reset">The power of doing nothing at all</a>
+                        </h4>
+                        <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
+                           <div class="d-flex align-items-center">
+                              <img src="<?= PROOT; ?>assets/media/avatar.png" alt="Avatar" class="avatar avatar-xs rounded-circle" />
+                              <div class="ms-2">
+                                 <a href="#" class="text-reset fs-6">Jitu Chauhan</a>
+                              </div>
+                           </div>
+                           <div class="ms-3"><span class="fs-6">Nov 23, 2023</span></div>
+                        </div>
+                     </article>
                   </div>
                </div>
                <div class="row">
-                  <div class="col-md-6">
-                     <div class="card-grid" data-cue="zoomIn">
-                        <div class="card-grid-inner">
-                           <h3 class="card-grid-heading">Digital product engineering</h3>
+                  <div class="col-lg-12" data-cue="zoomIn">
+                     <div class="mt-lg-8 mt-5">
+                        <a href="./blog.html" class="icon-link icon-link-hover text-dark">
+                           Read more news
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                              <path
+                                 fill-rule="evenodd"
+                                 d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!--Our articles end-->
+
+
+        <!--Service we offer start-->
+        <section class="py-xl-9 py-5" data-cue="fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-12">
+                        <div class="text-center mb-xl-9 mb-5">
+                            <small class="text-uppercase ls-md fw-semibold text-primary">Service We Offer</small>
+                            <h2 class="mb-0 mt-3">We provide expert consultancy in exploration, mining as well as Gold and Diamond trading within Ghana and beyond. We have established ourselves strategically to assist mining groups around the globe with practical skill to improve the mining industry. <br>We provide consultancy services into four (4) thematic areas.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-grid" data-cue="zoomIn">
+                            <div class="card-grid-inner">
+                           <h3 class="card-grid-heading">Mineral Exploration</h3>
                            <div class="card-grid-text">
-                              <p class="mb-0">Driving Digital Innovation: Unleashing the Power of Product Engineering for Exceptional User Experiences and Technological Excellence.</p>
+                              <p class="mb-0">Mineral exploration is an investigative activity prior to mining.</p>
                               <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
                                  Learn More
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -77,16 +175,16 @@
                            </div>
                         </div>
                         <div class="card-grid-image">
-                           <img src="./assets/images/landings/it-company/service-1.jpg" alt="service" class="rounded-3 img-fluid" />
+                           <img src="<?= PROOT; ?>assets/media/service-1.jpg" alt="service" class="rounded-3 img-fluid" />
                         </div>
                      </div>
                   </div>
                   <div class="col-md-6">
                      <div class="card-grid" data-cue="zoomIn">
                         <div class="card-grid-inner">
-                           <h3 class="card-grid-heading">Crafting SaaS development</h3>
+                           <h3 class="card-grid-heading">Mining Services</h3>
                            <div class="card-grid-text">
-                              <p class="mb-0">Empowering Businesses with Custom SaaS Solutions: Scalable, Secure, and Seamlessly Aligned with Your Unique Needs.</p>
+                              <p class="mb-0">Our equipment separates gravel from black sand, extracting Ore.</p>
                               <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
                                  Learn More
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -108,16 +206,16 @@
                            </div>
                         </div>
                         <div class="card-grid-image">
-                           <img src="./assets/images/landings/it-company/service-2.jpg" alt="service" class="rounded-3 img-fluid" />
+                           <img src="<?= PROOT; ?>assets/media/service-2.jpg" alt="service" class="rounded-3 img-fluid" />
                         </div>
                      </div>
                   </div>
                   <div class="col-md-6">
                      <div class="card-grid" data-cue="zoomIn">
                         <div class="card-grid-inner">
-                           <h3 class="card-grid-heading">AI app development</h3>
+                           <h3 class="card-grid-heading">Gold and Diamond Trading</h3>
                            <div class="card-grid-text">
-                              <p class="mb-0">Pioneering the Future: AI App Development that Transforms Ideas into Intelligent Solutions for a Smarter Tomorrow.</p>
+                              <p class="mb-0">Gold Purchasing and Supply, Exploration of Gold/Diamond.</p>
                               <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
                                  Learn More
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -139,16 +237,16 @@
                            </div>
                         </div>
                         <div class="card-grid-image">
-                           <img src="./assets/images/landings/it-company/service-3.jpg" alt="service" class="rounded-3 img-fluid" />
+                           <img src="<?= PROOT; ?>assets/media/service-3.jpg" alt="service" class="rounded-3 img-fluid" />
                         </div>
                      </div>
                   </div>
                   <div class="col-md-6">
                      <div class="card-grid" data-cue="zoomIn">
                         <div class="card-grid-inner">
-                           <h3 class="card-grid-heading">E-commerce development</h3>
+                           <h3 class="card-grid-heading">Small Scale Mining Logistics</h3>
                            <div class="card-grid-text">
-                              <p class="mb-0">Crafting Seamless E-Commerce Experiences: From Concept to Click, We Transform Ideas into Profitable Online Ventures.</p>
+                              <p class="mb-0">Supplying equipment to Artisanal Mining industry.</p>
                               <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
                                  Learn More
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -170,230 +268,64 @@
                            </div>
                         </div>
                         <div class="card-grid-image">
-                           <img src="./assets/images/landings/it-company/service-4.jpg" alt="service" class="rounded-3 img-fluid" />
+                           <img src="<?= PROOT; ?>assets/media/service-4.jpg" alt="service" class="rounded-3 img-fluid" />
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-6">
-                     <div class="card-grid" data-cue="zoomIn">
-                        <div class="card-grid-inner">
-                           <h3 class="card-grid-heading">Mobile app development</h3>
-                           <div class="card-grid-text">
-                              <p class="mb-0">Turning Ideas into Mobile Excellence: Innovative App Development Solutions Tailored for Your Unique Vision and User Experience.</p>
-                              <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
-                                 Learn More
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path
-                                       fill-rule="evenodd"
-                                       d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                 </svg>
-                              </a>
-                           </div>
-                           <div class="d-block d-lg-none">
-                              <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
-                                 Learn More
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path
-                                       fill-rule="evenodd"
-                                       d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                 </svg>
-                              </a>
-                           </div>
-                        </div>
-                        <div class="card-grid-image">
-                           <img src="./assets/images/landings/it-company/service-5.jpg" alt="service" class="rounded-3 img-fluid" />
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="card-grid" data-cue="zoomIn">
-                        <div class="card-grid-inner">
-                           <h3 class="card-grid-heading">Streamline DevOps as a service</h3>
-                           <div class="card-grid-text">
-                              <p class="mb-0">
-                                 Our DevOps-as-a-Service is designed to streamline your processes, from code commit to deployment, enabling you to achieve agility, reliability, and efficiency in your
-                                 software development life cycle.
-                              </p>
-                              <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
-                                 Learn More
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path
-                                       fill-rule="evenodd"
-                                       d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                 </svg>
-                              </a>
-                           </div>
-                           <div class="d-block d-lg-none">
-                              <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
-                                 Read Case Study
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path
-                                       fill-rule="evenodd"
-                                       d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                 </svg>
-                              </a>
-                           </div>
-                        </div>
-                        <div class="card-grid-image">
-                           <img src="./assets/images/landings/it-company/service-6.jpg" alt="service" class="rounded-3 img-fluid" />
-                        </div>
-                     </div>
-                  </div>
+                 
                </div>
             </div>
          </section>
          <!--Service we offer end-->
-
-         <!--Company overview start-->
-         <section class="py-xl-9 py-5" data-cue="fadeIn">
+        
+         <!--Who we are start-->
+         <section class="my-xl-9 my-5">
             <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="text-center mb-xl-7 mb-5">
-                        <small class="text-uppercase ls-md fw-semibold text-primary">Company Overview</small>
-                        <h2 class="mb-0 mt-3">Discover Our Story: Unveiling the Journey</h2>
+               <div class="row g-4">
+                  <div class="col-xl-5 col-lg-6 col-12" data-cue="slideInLeft">
+                     <div class="mb-4">
+                        <small class="text-uppercase ls-md fw-semibold">who we are</small>
+                        <h2 class="h1 mt-4 mb-3">We are a registered Ghanaian company established in 2010.</h2>
+                        <p class="mb-3">under the government of Ghana Act 1962(N0. 151). We provide expert consultancy in exploration, mining as well as Gold and Diamond trading within Ghana and beyond</p>
+                        <p class="mb-0">We have established ourselves strategically to assist mining groups around the globe with practical skill to improve the mining industry.</p>
                      </div>
-                  </div>
-               </div>
-               <div class="row" data-cue="fadeIn">
-                  <div class="col-12">
-                     <div class="tabs-to-dropdown">
-                        <div class="nav-wrapper mx-md-10 mb-lg-8 mb-5">
-                           <ul class="nav nav-fill d-none d-lg-flex nav-line-bottom nav-pills" id="pills-tab" role="tablist">
-                              <li class="nav-item" role="presentation">
-                                 <a class="nav-link active" id="pills-company-tab" data-bs-toggle="pill" href="#pills-company" role="tab" aria-controls="pills-company" aria-selected="true">
-                                    Who we are
-                                 </a>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                                 <a
-                                    class="nav-link"
-                                    id="pills-commitments-tab"
-                                    data-bs-toggle="pill"
-                                    href="#pills-commitments"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="pills-commitments"
-                                    aria-selected="false">
-                                    Our Commitments
-                                 </a>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                                 <a class="nav-link" id="pills-team-tab" data-bs-toggle="pill" href="#pills-team" type="button" role="tab" aria-controls="pills-team" aria-selected="false">Our Team</a>
-                              </li>
-                           </ul>
-                        </div>
-                        <div class="tab-content" id="pills-tabContentOne">
-                           <div class="tab-pane fade show active" id="pills-company" role="tabpanel" aria-labelledby="pills-company-tab" tabindex="0">
-                              <div class="row align-items-center gy-5">
-                                 <div class="col-lg-5" data-cue="zoomIn">
-                                    <div class="d-flex flex-column gap-4">
-                                       <div class="d-flex flex-column gap-2">
-                                          <h2>Forward-thinking IT company through innovation.</h2>
-                                          <p class="mb-0">
-                                             At [Your Company Name], we are more than just a technology solutions provider – we are architects of innovation, builders of digital experiences, and
-                                             partners in your journey towards success.
-                                          </p>
-                                       </div>
-                                       <div>
-                                          <a href="#!" class="btn btn-primary rounded-pill">Our Journey</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-7" data-cue="zoomIn">
-                                    <div class="position-relative">
-                                       <img src="./assets/images/landings/it-company/it-company-about-img.jpg" alt="about" class="rounded-3 img-fluid" />
 
-                                       <a
-                                          href="https://www.youtube.com/watch?v=CivuutI6lXY"
-                                          class="play-btn glightbox position-absolute top-50 start-50 translate-middle icon-shape icon-xl rounded-circle text-primary">
-                                          <i class="bi bi-play-fill"></i>
-                                       </a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="tab-pane fade" id="pills-commitments" role="tabpanel" aria-labelledby="pills-commitments-tab" tabindex="0">
-                              <div class="row g-4" data-cue="zoomIn">
-                                 <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
-                                       <div>
-                                          <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl">
-                                             <img src="./assets/images/landings/it-company/innovation.svg" alt="innovation" />
-                                          </span>
-                                       </div>
-                                       <div>
-                                          <h3>Innovation</h3>
-                                          <p class="mb-0">We thrive on creativity and ingenuity, constantly pushing the boundaries of what's possible in the digital realm.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
-                                       <div>
-                                          <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl">
-                                             <img src="./assets/images/landings/it-company/integrity.svg" alt="integrity" />
-                                          </span>
-                                       </div>
-                                       <div>
-                                          <h3>Integrity</h3>
-                                          <p class="mb-0">Trust is the foundation of our relationships. We operate with transparency, honesty, and a commitment to ethical business practices.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
-                                       <div>
-                                          <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl">
-                                             <img src="./assets/images/landings/it-company/hands-clapping.svg" alt="clapping" />
-                                          </span>
-                                       </div>
-                                       <div>
-                                          <h3>Client-Centric</h3>
-                                          <p class="mb-0">Your success is our success. We prioritize understanding your unique needs and delivering solutions that exceed your expectations.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab" tabindex="0">
-                              <div class="row align-items-center gy-5">
-                                 <div class="col-lg-7" data-cue="zoomIn">
-                                    <div class="d-flex gap-lg-4 gap-2 justify-content-center">
-                                       <div class="mt-5">
-                                          <img src="./assets/images/landings/it-company/team-long-img-1.jpg" alt="team" class="img-fluid rounded-3" />
-                                       </div>
-                                       <div>
-                                          <img src="./assets/images/landings/it-company/team-long-img-2.jpg" alt="team" class="img-fluid rounded-3" />
-                                       </div>
-                                       <div class="mt-5">
-                                          <img src="./assets/images/landings/it-company/team-long-img-3.jpg" alt="team" class="img-fluid rounded-3" />
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-lg-5 pe-lg-6" data-cue="zoomIn">
-                                    <div class="d-flex flex-column gap-4">
-                                       <div class="d-flex flex-column gap-2">
-                                          <h3 class="mb-0">Meet the Team: Driving Innovation with Passion and Expertise</h3>
-                                          <p class="mb-0">
-                                             At [Your Company Name], our success is driven by the talented individuals who make up our dedicated team. Get to know the faces behind the innovation, the
-                                             passion behind the projects, and the expertise that propels us forward.
-                                          </p>
-                                       </div>
-                                       <div>
-                                          <a href="#" class="btn btn-primary rounded-pill">Explore Careers</a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+                     <a href="./about.html" class="icon-link icon-link-hover">
+                        More about us
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                           <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                        </svg>
+                     </a>
+                  </div>
+                  <div class="col-xl-6 offset-xl-1 col-lg-6 col-12">
+                     <div class="row g-4" data-cues="slideInUp" data-delay="1000">
+                        <div class="col-lg-6 col-md-6 col-12">
+                           <a href="#!">
+                              <div
+                                 class="rounded-3 card-lift"
+                                 style="background-image: url(<?= PROOT; ?>assets/media/back-2.jpeg); background-repeat: no-repeat; height: 386px; background-size: cover"></div>
+                           </a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                           <a href="#!">
+                              <div
+                                 class="mb-4 rounded-3 card-lift"
+                                 style="background-image: url(<?= PROOT; ?>assets/media/back-1.jpeg); background-repeat: no-repeat; height: 180px; background-size: cover"></div>
+                           </a>
+                           <a href="#!">
+                              <div
+                                 class="mb-2 rounded-3 card-lift"
+                                 style="background-image: url(<?= PROOT; ?>assets/media/back-3.jpg); background-repeat: no-repeat; height: 180px; background-size: cover"></div>
+                           </a>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!--Company overview end-->
+         <!--Who we are end-->
 
          <!--Industry we serve start-->
          <section class="py-xl-9 py-5 bg-light" data-cue="fadeIn">
@@ -778,7 +710,7 @@
                                        </div>
                                        <div class="d-flex align-items-center gap-3">
                                           <div>
-                                             <img src="../assets/images/avatar/avatar-4.jpg" alt="avatar" class="avatar avtar-xs rounded-circle" />
+                                             <img src=".<?= PROOT; ?>assets/media/avatar.p" alt="avatar" class="avatar avtar-xs rounded-circle" />
                                           </div>
                                           <div>
                                              <h5 class="mb-0">Anita parmar</h5>
