@@ -1,6 +1,11 @@
-
-         <!--Hero start-->
-         <section class="position-relative py-10">
+<?php
+    require_once  __DIR__ . '/system/DatabaseConnector.php';
+    include  __DIR__ . '/system/inc/head.php';
+    include  __DIR__ . '/system/inc/topnav.php';
+?>
+        
+        <!--Hero start-->
+        <section class="position-relative py-10">
             <video class="w-100" autoplay muted loop style="object-fit: cover" playsinline>
                <source src="./assets/images/landings/it-company/video.mp4" type="video/mp4" />
             </video>
@@ -1009,4 +1014,4 @@
             </div>
          </section>
          <!--Logo section end-->
-     
+<?php include  __DIR__ . '/system/inc/footer.php'; ?>
