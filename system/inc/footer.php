@@ -260,24 +260,24 @@
     </div>
     
     <!-- Libs JS -->
-    <script src="<?= PROOT; ?> ?>assets/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= PROOT; ?> ?>assets/js/simplebar.min.js"></script>
-    <script src="<?= PROOT; ?> ?>assets/js/headhesive.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/simplebar.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/headhesive.min.js"></script>
 
     <!-- Theme JS -->
-    <script src="<?= PROOT; ?> ?>assets/js/theme.min.js"></script>
+    <script src="<?= PROOT; ?>assets/js/theme.min.js"></script>
 
-        <script src="<?= PROOT; ?> ?>assets/js/jarallax.min.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/vendors/jarallax.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/parallax.min.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/vendors/parallax.js"></script>
+        <script src="<?= PROOT; ?>assets/js/jarallax.min.js"></script>
+        <script src="<?= PROOT; ?>assets/js/jarallax.js"></script>
+        <script src="<?= PROOT; ?>assets/js/parallax.min.js"></script>
+        <script src="<?= PROOT; ?>assets/js/parallax.js"></script>
         <!-- Swiper JS -->
-        <script src="<?= PROOT; ?> ?>assets/js/swiper-bundle.min.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/vendors/swiper.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/glightbox.min.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/vendors/glight.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/scrollCue.min.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/vendors/scrollcue.js"></script>
-        <script src="<?= PROOT; ?> ?>assets/js/vendors/tab-to-dropdown.js"></script>
+        <script src="<?= PROOT; ?>assets/js/swiper-bundle.min.js"></script>
+        <script src="<?= PROOT; ?>assets/js/swiper.js"></script>
+        <script src="<?= PROOT; ?>assets/js/glightbox.min.js"></script>
+        <script src="<?= PROOT; ?>assets/js/glight.js"></script>
+        <script src="<?= PROOT; ?>assets/js/scrollCue.min.js"></script>
+        <script src="<?= PROOT; ?>assets/js/scrollcue.js"></script>
+        <script src="<?= PROOT; ?>assets/js/tab-to-dropdown.js"></script>
 </body>
 </html>

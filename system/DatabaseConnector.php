@@ -38,12 +38,6 @@
 		if ($statement->rowCount() > 0) {
 			$admin_data = $admin_dt[0];
 
-			$details_data = $dbConnection->query("SELECT * FROM susu_login_details WHERE susu_login_details.login_details_person_id = '" . $admin_id . "' ORDER BY id DESC LIMIT 1")->fetchAll();
-			
-			if (is_array($details_data) && count($details_data) > 0) {
-				$admin_data = array_merge($admin_data, $details_data[0]);
-			}
-
 			$fn = explode(' ', $admin_data['admin_name']);
 			$admin_data['first'] = ucwords($fn[0]);
 			$admin_data['middle'] = '';
@@ -66,19 +60,8 @@
     require_once ("Functions.php");
     require_once ("helpers.php");
     require_once dirname(__DIR__) . "/config.php";
-    $settings = getSystemSettings();
-    $appLogo = PROOT . $settings['app_logo'] ?? 'assets/media/logo/logo.png';
-    $appName = ucwords($settings['app_name'] ?? 'Prospera Susu');
-    $added_by  = null;
-    if (isset($_SESSION['PRSADMIN'])) {
-        if (admin_has_permission('admin')) {
-            $added_by = 'Admin';
-        } else if (admin_has_permission('approver') && !admin_has_permission('admin')) {
-            $added_by = 'Approver';
-        } else if (admin_has_permission('collector') && !admin_has_permission('admin')) {
-            $added_by = 'Collector';
-        }
-    }
+    $appLogo = 'assets/media/logo/logo.png';
+    $appName = 'Menterprice LTD';
 
     if (!is_dir(__DIR__ . '/cache')) mkdir(__DIR__ . '/cache', 0755, true);
 	if (!is_dir(__DIR__ . '/logs')) mkdir(__DIR__ . '/logs', 0755, true);
