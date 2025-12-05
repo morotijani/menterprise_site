@@ -1,8 +1,10 @@
 <?php
-   require_once  __DIR__ . '/system/DatabaseConnector.php';
-   $title = 'Home - ';
-   include  __DIR__ . '/system/inc/head.php';
-   include  __DIR__ . '/system/inc/topnav.php';
+    require_once  __DIR__ . '/system/DatabaseConnector.php';
+    $title = 'Home - ';
+    $navClass = "transparent navbar-transparent navbar-dark";
+    include  __DIR__ . '/system/inc/head.php';
+    include  __DIR__ . '/system/inc/topnav.php';
+
 ?>
 
    <!--Hero start-->
