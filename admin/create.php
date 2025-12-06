@@ -1,43 +1,71 @@
 <?php
-session_start();
-require_once __DIR__ . '/../includes/db.php';
-if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
-$errors = [];
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = $_POST['title'] ?? '';
-    $content = $_POST['content'] ?? '';
-    $slug = $_POST['slug'] ? $_POST['slug'] : slugify($title);
-    // handle image upload
-    $imageName = null;
-    if (!empty($_FILES['image']['name'])) {
-        $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-        $imageName = uniqid() . '.' . $ext;
-        move_uploaded_file($_FILES['image']['tmp_name'], __DIR__ . '/../uploads/' . $imageName);
-    }
-    if (empty($title) || empty($content)) { $errors[] = 'Title and content required'; }
-    if (empty($errors)) {
-        $stmt = $mysqli->prepare("INSERT INTO posts (title, slug, content, image) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param('ssss', $title, $slug, $content, $imageName);
-        $stmt->execute();
-        header('Location: posts.php'); exit;
-    }
-}
+    require_once ('../system/DatabaseConnector.php');
+    if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
+        $errors = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $title = $_POST['title'] ?? '';
+            $content = $_POST['content'] ?? '';
+            $slug = php_url_slug($title);
+            // handle image upload
+            $imageName = null;
+            if (!empty($_FILES['image']['name'])) {
+                $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid() . '.' . $ext;
+                $location = BASEURL . 'assets/media/blog/' . $imageName;
+                move_uploaded_file($_FILES['image']['tmp_name'], $location);
+            }
+
+            if (empty($title) || empty($content)) { $errors[] = 'Title and content required'; }
+
+            if (empty($errors)) {
+                $stmt = $dbConnection->prepare("INSERT INTO posts (title, slug, content, image) VALUES (?, ?, ?, ?)");
+                $stmt->execute([$title, $slug, $content, $imageName]);
+                redirect(PROOT . 'admin/blogs'); exit;
+            }
+        }
 ?>
-<!doctype html><html><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>New Post</title>
-<link href="/assets/css/style.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head><body>
-<div class="container py-4">
-  <h3>Create Post</h3>
-  <?php if ($errors): ?><div class="alert alert-danger"><?php echo implode('<br>', $errors); ?></div><?php endif; ?>
-  <form method="post" enctype="multipart/form-data">
-    <div class="mb-2"><input name="title" class="form-control" placeholder="Title" required></div>
-    <div class="mb-2"><input name="slug" class="form-control" placeholder="Slug (optional)"></div>
-    <div class="mb-2"><input name="image" type="file" class="form-control"></div>
-    <div class="mb-2"><textarea name="content" rows="8" class="form-control" placeholder="Content (HTML allowed)" required></textarea></div>
-    <div><button class="btn btn-success">Create</button> <a href="posts.php" class="btn btn-secondary">Cancel</a></div>
-  </form>
-</div>
-</body></html>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>New Post</title>
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-4">
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"> 
+            <a href="<?= PROOT; ?>admin/dashboard" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
+                <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="40" height="32" class="me-2" /> <span class="fs-4">M.Enterprice</span> 
+            </a>
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto"> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs.php">Blog</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contacts.php">Contacts</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Sites</a> 
+                <a class="py-2 link-body-emphasis text-decoration-none" href="logout.php">Logout</a> 
+            </nav> 
+        </div>
+        <h3>Create Post</h3>
+        <?php if ($errors): ?>
+        <div class="alert alert-danger">
+            <?php echo implode('<br>', $errors); ?>
+        </div>
+        <?php endif; ?>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-2">
+                <input name="title" class="form-control" placeholder="Title" required>
+            </div>
+            <div class="mb-2">
+                <input name="image" type="file" class="form-control">
+            </div>
+            <div class="mb-2">
+                <textarea name="content" rows="8" class="form-control" placeholder="Content (HTML allowed)" required></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success">Create</button> 
+                <a href="blogs.php" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,13 +1,13 @@
 <?php
     require_once ('../system/DatabaseConnector.php');
-    if (!isset($_SESSION['user_id'])) { header('Location: index.php'); exit; }
+    if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/index'); exit; }
 
     // Handle Delete
     if (isset($_GET['delete'])) {
         $delete_id = $_GET['delete'];
         $stmt = $dbConnection->prepare("DELETE FROM contacts WHERE contact_id = ?");
         $stmt->execute([$delete_id]);
-        header('Location: contacts.php?deleted=true');
+        redirect(PROOT . 'admin/contacts?deleted=true');
         exit;
     }
 

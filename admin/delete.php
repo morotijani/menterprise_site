@@ -1,18 +1,16 @@
 <?php
-session_start();
-require_once __DIR__ . '/../includes/db.php';
-if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
-$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-if ($id) {
-    $stmt = $mysqli->prepare("SELECT image FROM posts WHERE id = ? LIMIT 1");
-    $stmt->bind_param('i', $id);
-    $stmt->execute();
-    $r = $stmt->get_result()->fetch_assoc();
-    if ($r && $r['image']) {
-        @unlink(__DIR__ . '/../uploads/' . $r['image']);
+    require_once ('../system/DatabaseConnector.php');
+    if (!isset($_SESSION['user_id'])) { redirect( PROOT . 'admin/login'); exit; }
+
+    $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+    if ($id) {
+        $stmt = $dbConnection->prepare("SELECT image FROM posts WHERE id = ? LIMIT 1");
+        $stmt->execute([$id]);
+        $r = $stmt->fetchAll()[0];
+        if ($r && $r['image']) {
+            @unlink(BASEURL . 'assets/media/blog/' . $r['image']);
+        }
+        $d = $dbConnection->prepare("DELETE FROM posts WHERE id = ?");
+        $d->execute([$id]);
     }
-    $d = $mysqli->prepare("DELETE FROM posts WHERE id = ?");
-    $d->bind_param('i', $id);
-    $d->execute();
-}
-header('Location: posts.php'); exit;
+    redirect( PROOT . 'admin/blogs'); exit;
