@@ -23,8 +23,8 @@
         if (empty($title) || empty($content)) { $errors[] = 'Title and content required'; }
 
         if (empty($errors)) {
-            $stmt = $dbConnection->prepare("INSERT INTO posts (title, slug, content, image, category_id, created_at) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$title, $slug, $content, $imageName, $category_id, $date]);
+            $stmt = $dbConnection->prepare("INSERT INTO posts (title, slug, content, image, category_id, user_id, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$title, $slug, $content, $imageName, $category_id, $_SESSION['user_id'], $date]);
             redirect(PROOT . 'admin/blogs'); exit;
         }
     }

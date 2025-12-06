@@ -33,8 +33,6 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
         $message
     ]);
 
-    $mail = new PHPMailer(true);
-
     try {
         $subject = 'New Contact Form Submission from ' . $firstName . ' ' . $lastName;
         $body = "<h2>New Contact Form Submission</h2>";
@@ -48,7 +46,7 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $body .= "<p><strong>Message:</strong><br>" . nl2br($message) . "</p>";
 
-        send_email($name, $to, $subject, $body) ;
+        send_email($name, $to, $subject, $body);
         
         $_SESSION['success_message'] = 'Your message has been sent successfully!';
     } catch (Exception $e) {
