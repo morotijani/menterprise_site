@@ -5,6 +5,8 @@
     include  __DIR__ . '/system/inc/head.php';
     include  __DIR__ . '/system/inc/topnav.php';
 
+    $news = $dbConnection->query("SELECT p.id, p.title, p.slug, p.content, p.image, p.created_at, c.name as category_name, u.username as author_name FROM posts p LEFT JOIN categories c ON p.category_id = c.id LEFT JOIN users u ON p.user_id = u.id ORDER BY p.created_at DESC LIMIT 3")->fetchAll();
+    
 ?>
 
    <!--Hero start-->
@@ -54,75 +56,35 @@
             <!-- Blog Card -->
             <div class="table-responsive-lg">
                 <div class="row g-5 flex-nowrap pb-4 pb-lg-0 me-5 me-lg-0">
+                    <?php foreach ($news as $post): ?>
                     <article class="col-lg-4 col-md-6 col-12" data-cue="zoomIn">
                         <figure class="mb-4 zoom-img">
-                            <a href="./blog-single.html">
-                                <img src="<?= PROOT; ?>assets/media/blog/b-1.png" alt="blog" class="img-fluid rounded-3" />
+                            <a href="post?slug=<?= sanitize($post['slug']) ?>">
+                                <img src="<?= PROOT; ?>assets/media/blog/<?= sanitize($post['image'] ?: 'placeholder.jpg') ?>" alt="<?= sanitize($post['title']) ?>" class="img-fluid rounded-3" />
                             </a>
                         </figure>
 
-                        <a href="#!" class="badge bg-primary-subtle text-primary-emphasis rounded-pill text-uppercase">Startup</a>
+                        <a href="#!" class="badge bg-primary-subtle text-primary-emphasis rounded-pill text-uppercase"><?= sanitize($post['category_name'] ?? 'Uncategorized') ?></a>
                         <h3 class="my-3 lh-base h4">
-                            <a href="./blog-single.html" class="text-reset">You will destroy yourself financially if you save</a>
+                            <a href="post?slug=<?= sanitize($post['slug']) ?>" class="text-reset"><?= sanitize($post['title']) ?></a>
                         </h3>
                         <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
                             <div class="d-flex align-items-center">
                                 <img src="<?= PROOT; ?>assets/media/avatar.png" alt="Avatar" class="avatar avatar-xs rounded-circle" />
                                 <div class="ms-2">
-                                    <a href="#" class="text-reset fs-6">Sandip Chauhan</a>
+                                    <a href="#" class="text-reset fs-6"><?= sanitize($post['author_name'] ?? 'Admin') ?></a>
                                 </div>
                             </div>
-                            <div class="ms-3"><span class="fs-6">Nov 26, 2023</span></div>
+                            <div class="ms-3"><span class="fs-6"><?= pretty_date_notime($post['created_at']) ?></span></div>
                         </div>
                     </article>
-                    <article class="col-lg-4 col-md-6 col-12" data-cue="zoomIn">
-                        <figure class="mb-4 zoom-img">
-                            <a href="./blog-single.html">
-                              <img src="<?= PROOT; ?>assets/media/blog/b-2.png" alt="blog" class="img-fluid rounded-3" />
-                           </a>
-                        </figure>
-
-                        <a href="#!" class="badge bg-warning-subtle text-warning-emphasis rounded-pill text-uppercase">Business</a>
-                        <h3 class="my-3 lh-base h4">
-                           <a href="./blog-single.html" class="text-reset">Block Template for startup business</a>
-                        </h3>
-                        <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
-                            <div class="d-flex align-items-center">
-                                <img src="<?= PROOT; ?>assets/media/avatar.png" alt="Avatar" class="avatar avatar-xs rounded-circle" />
-                                <div class="ms-2">
-                                    <a href="#" class="text-reset fs-6">Anita Parmar</a>
-                                </div>
-                            </div>
-                            <div class="ms-3"><span class="fs-6">Nov 21, 2023</span></div>
-                        </div>
-                    </article>
-                    <article class="col-lg-4 col-md-6 col-12" data-cue="zoomIn">
-                        <figure class="mb-4 zoom-img">
-                            <a href="./blog-single.html">
-                                <img src="<?= PROOT; ?>assets/media/blog/b-4.jpg" alt="blog" class="img-fluid rounded-3" />
-                            </a>
-                        </figure>
-
-                        <a href="#!" class="badge bg-success-subtle text-success-emphasis rounded-pill text-uppercase">Digital</a>
-                        <h4 class="my-3 lh-base">
-                           <a href="./blog-single.html" class="text-reset">The power of doing nothing at all</a>
-                        </h4>
-                        <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
-                           <div class="d-flex align-items-center">
-                              <img src="<?= PROOT; ?>assets/media/avatar.png" alt="Avatar" class="avatar avatar-xs rounded-circle" />
-                                <div class="ms-2">
-                                    <a href="#" class="text-reset fs-6">Jitu Chauhan</a>
-                                </div>
-                            </div>
-                           <div class="ms-3"><span class="fs-6">Nov 23, 2023</span></div>
-                        </div>
-                    </article>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12" data-cue="zoomIn">
                     <div class="mt-lg-8 mt-5">
-                        <a href="./blog.html" class="icon-link icon-link-hover text-dark">
+                        <a href="<?= PROOT; ?>news" class="icon-link icon-link-hover text-dark">
                             Read more news
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path
