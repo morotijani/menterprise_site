@@ -20,7 +20,7 @@
                                 <a class="nav-link" href="<?= PROOT; ?>about">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= PROOT; ?>project">Project</a>
+                                <a class="nav-link" href="<?= PROOT; ?>projects">Project</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= PROOT; ?>services">Services</a>

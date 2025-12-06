@@ -116,9 +116,9 @@
                     <div class="small mb-3 mb-lg-0">
                         Copyright &copy; <?= date('Y'); ?>
 
-                        <span class="text-primary"><a href="<?= PROOT; ?>">M. Enterprise Ghana (MEG) Limited. All rights reserved.</a></span>
+                        <span class="text-warning"><a href="<?= PROOT; ?>">M. Enterprise Ghana (MEG) Limited. All rights reserved.</a></span>
                         | Designed by
-                        <span class="text-primary"><a href="javascript:;">Nuhu Ibrahim</a></span>
+                        <span class="text-warning"><a href="javascript:;">Nuhu Ibrahim</a></span>
                     </div>
                 </div>
                 <div class="col-md-3">
