@@ -44,17 +44,12 @@
     $totalPages = ceil($totalPosts / $postsPerPage);
 
     // Get posts for the current page
-    $sql .= " ORDER BY p.created_at DESC LIMIT :limit OFFSET :offset";
+    // Append validated integer LIMIT/OFFSET directly to SQL to avoid driver-specific binding issues
+    $limit = (int) $postsPerPage;
+    $off = (int) $offset;
+    $sql .= " ORDER BY p.created_at DESC LIMIT " . $limit . " OFFSET " . $off;
     $postsStmt = $dbConnection->prepare($sql);
-
-    // Bind string/int params
-    foreach ($params as $key => $value) {
-        $postsStmt->bindValue($key + 1, $value);
-    }
-    
-    $postsStmt->bindValue(':limit', $postsPerPage, PDO::PARAM_INT);
-    $postsStmt->bindValue(':offset', $offset, PDO::PARAM_INT);
-    $postsStmt->execute();
+    $postsStmt->execute($params);
     $posts = $postsStmt->fetchAll();
 ?>
 
