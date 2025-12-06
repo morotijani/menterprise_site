@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
     <div class="container py-4">
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"> 
             <a href="dashboard" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
@@ -27,6 +28,7 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center mb-3">
+
             <h3>Blog Posts</h3>
             <a class="btn btn-success" href="create">New Post</a>
         </div>
@@ -40,17 +42,21 @@
         <?php if (isset($_GET['updated'])): ?>
             <div class="alert alert-success">Post updated successfully.</div>
         <?php endif; ?>
-
+        <a class="btn btn-info mb-2" href="category_list">Manage Categories</a>
         <?php if (empty($posts)): ?>
             <div class="alert alert-info">No posts yet.</div>
         <?php else: ?>
             <table class="table table-striped">
                 <thead>
+
                     <tr>
                         <th>Title</th>
                         <th>Slug</th>
                         <th>Created</th>
+
                         <th>Actions</th>
+
+
                     </tr>
                 </thead>
                 <tbody>
@@ -64,6 +70,7 @@
                             <a class="btn btn-sm btn-danger" href="delete?id=<?php echo $p['id']; ?>" onclick="return confirm('Delete this post?')">Delete</a>
                         </td>
                     </tr>
+
                     <?php endforeach; ?>
                 </tbody>
             </table>
