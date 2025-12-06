@@ -1,13 +1,14 @@
 <?php
 require_once ('../system/DatabaseConnector.php');
 
-if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login'); exit; }
+    if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login'); exit; }
 
     $id = $_GET['id'] ?? null;
-    if (!$id) { redirect(PROOT . 'admin/posts'); exit; }
+    if (!$id) { redirect(PROOT . 'admin/blogs'); exit; }
 
     $stmt = $dbConnection->prepare("SELECT * FROM posts WHERE id = ? LIMIT 1");
     $stmt->execute([$id]);
+
     $post = $stmt->fetchAll()[0];
 
     if (!$post) { redirect(PROOT . 'admin/posts'); exit; }
@@ -16,6 +17,7 @@ if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login'); exit; }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title = $_POST['title'] ?? '';
         $content = $_POST['content'] ?? '';
+        $category_id = $_POST['category_id'] ?? null;
         $slug = php_url_slug($title);
         $imageName = $post['image'];
 
@@ -33,12 +35,15 @@ if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login'); exit; }
 
         if (empty($title) || empty($content)) { $errors[] = 'Title and content required'; }
 
+
         if (empty($errors)) {
-            $u = $dbConnection->prepare("UPDATE posts SET title=?, slug=?, content=?, image=?, updated_at=NOW() WHERE id = ?");
-            $u->execute([$title, $slug, $content, $imageName, $id]);
+            $u = $dbConnection->prepare("UPDATE posts SET title=?, slug=?, content=?, image=?, category_id=?, updated_at=NOW() WHERE id = ?");
+            $u->execute([$title, $slug, $content, $imageName, $category_id, $id]);
             redirect(PROOT . 'admin/blogs'); exit;
         }
-}
+    }
+
+    $categoriesStmt = $dbConnection->query("SELECT * FROM categories ORDER BY name ASC");
 
 ?>
 <!doctype html>
@@ -50,6 +55,7 @@ if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login'); exit; }
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
     <div class="container py-4">
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"> 
             <a href="dashboard" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
@@ -81,6 +87,16 @@ if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login'); exit; }
             <div class="mb-2">
                 <input name="image" type="file" class="form-control">
             </div>
+             <div class="mb-2">
+                <label for="category_id" class="form-label">Category</label>
+                <select name="category_id" id="category_id" class="form-control" required>
+                    <option value="">-- Select Category --</option>
+                    <?php foreach ($categoriesStmt as $cat): ?>
+                        <option value="<?= htmlspecialchars($cat['id']) ?>" <?= ($cat['id'] == $post['category_id']) ? 'selected' : '' ?>><?= htmlspecialchars($cat['name']) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
             <div class="mb-2">
                 <textarea name="content" rows="8" class="form-control" required>
                     <?php echo sanitize($post['content']); ?>

@@ -1,32 +1,38 @@
 <?php
     require_once ('../system/DatabaseConnector.php');
     if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
-        $errors = [];
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $title = $_POST['title'] ?? '';
-            $content = $_POST['content'] ?? '';
-            $slug = php_url_slug($title);
-            // handle image upload
-            $imageName = null;
-            if (!empty($_FILES['image']['name'])) {
-                $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-                $imageName = uniqid() . '.' . $ext;
-                $location = BASEURL . 'assets/media/blog/' . $imageName;
-                move_uploaded_file($_FILES['image']['tmp_name'], $location);
-            }
+    $errors = [];
 
-            if (empty($title) || empty($content)) { $errors[] = 'Title and content required'; }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $title = $_POST['title'] ?? '';
+        $content = $_POST['content'] ?? '';
+        $slug = php_url_slug($title);
+        $category_id = $_POST['category_id'] ?? null;
 
-            if (empty($errors)) {
-                $stmt = $dbConnection->prepare("INSERT INTO posts (title, slug, content, image) VALUES (?, ?, ?, ?)");
-                $stmt->execute([$title, $slug, $content, $imageName]);
-                redirect(PROOT . 'admin/blogs'); exit;
-            }
+        // handle image upload
+        $imageName = null;
+
+        if (!empty($_FILES['image']['name'])) {
+            $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+            $imageName = uniqid() . '.' . $ext;
+            $location = BASEURL . 'assets/media/blog/' . $imageName;
+            move_uploaded_file($_FILES['image']['tmp_name'], $location);
         }
+        if (empty($title) || empty($content)) { $errors[] = 'Title and content required'; }
+
+        if (empty($errors)) {
+            $stmt = $dbConnection->prepare("INSERT INTO posts (title, slug, content, image, category_id) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$title, $slug, $content, $imageName, $category_id]);
+            redirect(PROOT . 'admin/blogs'); exit;
+        }
+    }
+
+    $categoriesStmt = $dbConnection->query("SELECT * FROM categories ORDER BY name ASC");
+    $categories = $categoriesStmt->fetchAll();
 ?>
 <!doctype html>
 <html>
-<head>
+    <head>
     <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>New Post</title>
     <link href="/assets/css/style.css" rel="stylesheet">
@@ -56,7 +62,16 @@
                 <input name="title" class="form-control" placeholder="Title" required>
             </div>
             <div class="mb-2">
-                <input name="image" type="file" class="form-control">
+                <input name="image" type="file" class="form-control" required>
+            </div>
+             <div class="mb-2">
+                <label for="category_id" class="form-label">Category</label>
+                <select name="category_id" id="category_id" class="form-control" required>
+                    <option value="">-- Select Category --</option>
+                    <?php foreach ($categories as $cat): ?>
+                        <option value="<?= htmlspecialchars($cat['id']) ?>"><?= htmlspecialchars($cat['name']) ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
             <div class="mb-2">
                 <textarea name="content" rows="8" class="form-control" placeholder="Content (HTML allowed)" required></textarea>
