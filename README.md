@@ -59,3 +59,5 @@ Copy used from: https://menterpriseghanalimited.com/ (services and company descr
 - `includes/` — shared header, footer, config, functions
 
 Menterprice Website
+ref: https://block.codescandy.com/
+https://northbay-resources.com/
