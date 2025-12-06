@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once __DIR__ . '/../includes/db.php';
+    require_once ('../system/DatabaseConnector.php');
 if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
 $id = $_GET['id'] ?? null;
 if (!$id) { header('Location: posts.php'); exit; }
-$stmt = $mysqli->prepare("SELECT id, title, slug, content, image FROM posts WHERE id = ? LIMIT 1");
+$stmt = $dbConnection->prepare("SELECT id, title, slug, content, image FROM posts WHERE id = ? LIMIT 1");
 $stmt->bind_param('i', $id);
 $stmt->execute();
 $post = $stmt->get_result()->fetch_assoc();
