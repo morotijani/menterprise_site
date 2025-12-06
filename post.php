@@ -1,36 +1,55 @@
 <?php
-require_once __DIR__ . '/includes/db.php';
-$slug = isset($_GET['slug']) ? $_GET['slug'] : '';
-if (!$slug) { header('Location: blog.php'); exit; }
-$stmt = $mysqli->prepare("SELECT id, title, content, image, created_at FROM posts WHERE slug = ? LIMIT 1");
-$stmt->bind_param('s', $slug);
-$stmt->execute();
-$res = $stmt->get_result();
-$post = $res->fetch_assoc();
-if (!$post) { header('Location: blog.php'); exit; }
+    require_once __DIR__ . '/system/DatabaseConnector.php';
+
+    $slug = $_GET['slug'] ?? '';
+    if (!$slug) {
+        header('Location: news.php');
+        exit;
+    }
+
+    $sql = "SELECT p.*, c.name as category_name, c.slug as category_slug, u.username as author_name 
+            FROM posts p 
+            LEFT JOIN categories c ON p.category_id = c.id
+            LEFT JOIN users u ON p.user_id = u.id
+            WHERE p.slug = ? LIMIT 1";
+
+    $stmt = $dbConnection->prepare($sql);
+    $stmt->execute([$slug]);
+    $post = $stmt->fetch();
+
+    if (!$post) {
+        header('Location: 404.php');
+        exit;
+    }
+
+    $title = htmlspecialchars($post['title']) . ' - ';
+    $navClass = "navbar-light w-100";
+    include __DIR__ . '/system/inc/head.php';
+    include __DIR__ . '/system/inc/topnav.php';
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?php echo htmlspecialchars($post['title']); ?> - Menterprise</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-</head>
-<body>
-<?php include 'includes/header.php'; ?>
-<main class="container my-5">
-  <article>
-    <h1><?php echo htmlspecialchars($post['title']); ?></h1>
-    <p class="text-muted">Posted on <?php echo date('F j, Y', strtotime($post['created_at'])); ?></p>
-    <?php if ($post['image']): ?>
-      <img src="uploads/<?php echo htmlspecialchars($post['image']); ?>" alt="" class="img-fluid mb-3">
-    <?php endif; ?>
-    <div><?php echo $post['content']; ?></div>
-  </article>
-</main>
-<?php include 'includes/footer.php'; ?>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+
+<section class="py-5 py-lg-8">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                <div class="text-center">
+                    <?php if ($post['category_name']): ?>
+                        <a href="news.php?category=<?= htmlspecialchars($post['category_slug']) ?>" class="badge bg-primary-subtle text-primary-emphasis rounded-pill text-uppercase"><?= htmlspecialchars($post['category_name']) ?></a>
+                    <?php endif; ?>
+                    <h1 class="my-3"><?= htmlspecialchars($post['title']) ?></h1>
+                    <p class="mb-0">Posted on <?= pretty_date($post['created_at']) ?> by <?= htmlspecialchars($post['author_name'] ?? 'Admin') ?></p>
+                </div>
+                <?php if ($post['image']): ?>
+                    <figure class="mt-6">
+                        <img src="<?= PROOT; ?>assets/media/blog/<?= htmlspecialchars($post['image']) ?>" alt="<?= htmlspecialchars($post['title']) ?>" class="img-fluid rounded-3" />
+                    </figure>
+                <?php endif; ?>
+                <div class="mt-6 lead">
+                    <?= nl2br($post['content']) ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php include __DIR__ . '/system/inc/footer.php'; ?>

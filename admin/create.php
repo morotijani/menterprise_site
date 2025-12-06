@@ -87,5 +87,24 @@
             </div>
         </form>
     </div>
+    
+    <script src="<?= PROOT; ?>assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/87lq0a69wq228bimapgxuc63s4akao59p3y5jhz37x50zpjk/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script type="text/javascript">
+        
+        // Testarea Editor
+        // tinymce.init({
+        //     selector: '#product_description',
+        // });
+    
+        tinymce.init({ 
+            selector: 'textarea',
+            setup: function (editor) {
+                editor.on('change', function (e) {
+                    editor.save();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
