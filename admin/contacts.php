@@ -24,14 +24,14 @@
 <body>
     <div class="container py-4">
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"> 
-            <a href="dashboard.php" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
+            <a href="dashboard" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
                 <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="40" height="32" class="me-2" /> <span class="fs-4">M.Enterprice</span> 
             </a>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto"> 
-                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs.php">Blog</a> 
-                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contacts.php">Contacts</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs">Blog</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contacts">Contacts</a> 
                 <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Sites</a> 
-                <a class="py-2 link-body-emphasis text-decoration-none" href="logout.php">Logout</a> 
+                <a class="py-2 link-body-emphasis text-decoration-none" href="logout">Logout</a> 
             </nav> 
         </div>
 
@@ -69,7 +69,7 @@
                             <td><?=nl2br(htmlspecialchars(substr($c['message'], 0, 50))) . (strlen($c['message']) > 50 ? '...' : '')?></td>
                             <td><?=htmlspecialchars($c['created_at'])?></td>
                             <td>
-                                <a href="contacts.php?delete=<?=$c['contact_id']?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this entry?')">Delete</a>
+                                <a href="contacts?delete=<?=$c['contact_id']?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this entry?')">Delete</a>
                             </td>
                         </tr>
                         <?php endforeach;?>

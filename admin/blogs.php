@@ -1,6 +1,6 @@
 <?php
     require_once ('../system/DatabaseConnector.php');
-    if (!isset($_SESSION['user_id'])) { header('Location: index.php'); exit; }
+    if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/index'); exit; }
 
     $stmt = $dbConnection->query("SELECT * FROM posts ORDER BY created_at DESC");
     $posts = $stmt->fetchAll();
@@ -15,20 +15,20 @@
 <body>
     <div class="container py-4">
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"> 
-            <a href="dashboard.php" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
+            <a href="dashboard" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
                 <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="40" height="32" class="me-2" /> <span class="fs-4">M.Enterprice</span> 
             </a>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto"> 
-                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs.php">Blog</a> 
-                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contacts.php">Contacts</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs">Blog</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contacts">Contacts</a> 
                 <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Sites</a> 
-                <a class="py-2 link-body-emphasis text-decoration-none" href="logout.php">Logout</a> 
+                <a class="py-2 link-body-emphasis text-decoration-none" href="logout">Logout</a> 
             </nav> 
         </div>
 
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3>Blog Posts</h3>
-            <a class="btn btn-success" href="create.php">New Post</a>
+            <a class="btn btn-success" href="create">New Post</a>
         </div>
 
         <?php if (isset($_GET['deleted'])): ?>
@@ -60,8 +60,8 @@
                         <td><?php echo htmlspecialchars($p['slug']); ?></td>
                         <td><?php echo htmlspecialchars($p['created_at']); ?></td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="edit.php?id=<?php echo $p['id']; ?>">Edit</a>
-                            <a class="btn btn-sm btn-danger" href="delete.php?id=<?php echo $p['id']; ?>" onclick="return confirm('Delete this post?')">Delete</a>
+                            <a class="btn btn-sm btn-primary" href="edit?id=<?php echo $p['id']; ?>">Edit</a>
+                            <a class="btn btn-sm btn-danger" href="delete?id=<?php echo $p['id']; ?>" onclick="return confirm('Delete this post?')">Delete</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
