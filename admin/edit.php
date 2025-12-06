@@ -18,6 +18,8 @@ require_once ('../system/DatabaseConnector.php');
         $title = $_POST['title'] ?? '';
         $content = $_POST['content'] ?? '';
         $category_id = $_POST['category_id'] ?? null;
+        $date =  $_POST['date'] ?? '';
+        $date = date('Y-m-d H:i:s', strtotime($date));
         $slug = php_url_slug($title);
         $imageName = $post['image'];
 
@@ -37,8 +39,8 @@ require_once ('../system/DatabaseConnector.php');
 
 
         if (empty($errors)) {
-            $u = $dbConnection->prepare("UPDATE posts SET title=?, slug=?, content=?, image=?, category_id=?, updated_at=NOW() WHERE id = ?");
-            $u->execute([$title, $slug, $content, $imageName, $category_id, $id]);
+            $u = $dbConnection->prepare("UPDATE posts SET title=?, slug=?, content=?, image=?, category_id=?, created_at = ?, updated_at=NOW() WHERE id = ?");
+            $u->execute([$title, $slug, $content, $imageName, $category_id, $date, $id]);
             redirect(PROOT . 'admin/blogs'); exit;
         }
     }
@@ -85,7 +87,7 @@ require_once ('../system/DatabaseConnector.php');
             </div>
             <?php endif; ?>
             <div class="mb-2">
-                <input name="image" type="file" class="form-control">
+                <input name="image" type="file" class="form-control" accept="image/*">
             </div>
              <div class="mb-2">
                 <label for="category_id" class="form-label">Category</label>
@@ -101,6 +103,9 @@ require_once ('../system/DatabaseConnector.php');
                 <textarea name="content" rows="8" class="form-control" required>
                     <?php echo sanitize($post['content']); ?>
                 </textarea>
+            </div>
+            <div class="mb-2">
+                <input name="date" type="datetime-local" value="<?= date('Y-m-d\TH:i'); ?>" class="form-control" required>
             </div>
             <div>
                 <button class="btn btn-primary">Save</button> 

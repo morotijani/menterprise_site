@@ -8,6 +8,8 @@
         $content = $_POST['content'] ?? '';
         $slug = php_url_slug($title);
         $category_id = $_POST['category_id'] ?? null;
+        $date =  $_POST['date'] ?? '';
+        $date = date('Y-m-d H:i:s', strtotime($date));
 
         // handle image upload
         $imageName = null;
@@ -21,8 +23,8 @@
         if (empty($title) || empty($content)) { $errors[] = 'Title and content required'; }
 
         if (empty($errors)) {
-            $stmt = $dbConnection->prepare("INSERT INTO posts (title, slug, content, image, category_id) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$title, $slug, $content, $imageName, $category_id]);
+            $stmt = $dbConnection->prepare("INSERT INTO posts (title, slug, content, image, category_id, created_at) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$title, $slug, $content, $imageName, $category_id, $date]);
             redirect(PROOT . 'admin/blogs'); exit;
         }
     }
@@ -62,7 +64,7 @@
                 <input name="title" class="form-control" placeholder="Title" required>
             </div>
             <div class="mb-2">
-                <input name="image" type="file" class="form-control" required>
+                <input name="image" type="file" class="form-control" accept="image/*" required>
             </div>
              <div class="mb-2">
                 <label for="category_id" class="form-label">Category</label>
@@ -75,6 +77,9 @@
             </div>
             <div class="mb-2">
                 <textarea name="content" rows="8" class="form-control" placeholder="Content (HTML allowed)" required></textarea>
+            </div>
+            <div class="mb-2">
+                <input name="date" type="datetime-local" value="<?= date('Y-m-d\TH:i'); ?>" class="form-control" required>
             </div>
             <div>
                 <button type="submit" class="btn btn-success">Create</button> 
