@@ -1,16 +1,16 @@
 <?php
 require_once ('../system/DatabaseConnector.php');
 
-if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login.php'); exit; }
+if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login'); exit; }
 
     $id = $_GET['id'] ?? null;
-    if (!$id) { redirect(PROOT . 'admin/posts.php'); exit; }
+    if (!$id) { redirect(PROOT . 'admin/posts'); exit; }
 
     $stmt = $dbConnection->prepare("SELECT * FROM posts WHERE id = ? LIMIT 1");
     $stmt->execute([$id]);
     $post = $stmt->fetchAll()[0];
 
-    if (!$post) { redirect(PROOT . 'admin/posts.php'); exit; }
+    if (!$post) { redirect(PROOT . 'admin/posts'); exit; }
     $errors = [];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -52,14 +52,14 @@ if (!isset($_SESSION['user_id'])) { redirect(PROOT . 'admin/login.php'); exit; }
 <body>
     <div class="container py-4">
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"> 
-            <a href="<?= PROOT; ?>admin/dashboard" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
+            <a href="dashboard" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
                 <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="40" height="32" class="me-2" /> <span class="fs-4">M.Enterprice</span> 
             </a>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto"> 
-                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs.php">Blog</a> 
-                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contacts.php">Contacts</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs">Blog</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contacts">Contacts</a> 
                 <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Sites</a> 
-                <a class="py-2 link-body-emphasis text-decoration-none" href="logout.php">Logout</a> 
+                <a class="py-2 link-body-emphasis text-decoration-none" href="logout">Logout</a> 
             </nav> 
         </div>
 
