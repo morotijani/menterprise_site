@@ -29,13 +29,21 @@
                         <div class="col-md-7 col-12">
                             <div class="card shadow-sm">
                                 <div class="card-body">
-                                    <form class="row g-3 needs-validation" novalidate>
+                                    <?php if (isset($_SESSION['success_message'])): ?>
+                                        <div class="alert alert-success"><?= $_SESSION['success_message']; ?></div>
+                                        <?php unset($_SESSION['success_message']); ?>
+                                    <?php endif; ?>
+                                    <?php if (isset($_SESSION['error_message'])): ?>
+                                        <div class="alert alert-danger"><?= $_SESSION['error_message']; ?></div>
+                                        <?php unset($_SESSION['error_message']); ?>
+                                    <?php endif; ?>
+                                    <form class="row g-3 needs-validation" novalidate method="post" action="system/parsers/contact_submit.php">
                                         <div class="col-lg-6 col-md-12">
                                             <label for="contactFirstNameInput" class="form-label">
                                                 First Name
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="contactFirstNameInput" required />
+                                            <input type="text" class="form-control" id="contactFirstNameInput" name="first_name" required />
                                             <div class="invalid-feedback">Please enter firstname.</div>
                                         </div>
                                         <div class="col-lg-6 col-md-12">
@@ -43,7 +51,7 @@
                                                 Last Name
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="contactLastNameInput" required />
+                                            <input type="text" class="form-control" id="contactLastNameInput" name="last_name" required />
                                             <div class="invalid-feedback">Please enter lastname.</div>
                                         </div>
                                         <div class="col-md-12">
@@ -51,22 +59,22 @@
                                                 Email
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="email" class="form-control" id="contactEmailInput" required />
+                                            <input type="email" class="form-control" id="contactEmailInput" name="email" required />
                                             <div class="invalid-feedback">Please enter email.</div>
                                         </div>
                                         <div class="col-md-12">
                                             <label for="contactCompanyNameInput" class="form-label">Company Name</label>
-                                            <input type="text" class="form-control" id="contactCompanyNameInput" required />
+                                            <input type="text" class="form-control" id="contactCompanyNameInput" name="company_name" />
                                             <div class="invalid-feedback">Please enter company name.</div>
                                         </div>
                                         <div class="col-md-12">
                                             <label for="contactPhoneInput" class="form-label">Phone</label>
-                                            <input type="tel" class="form-control" id="contactPhoneInput" required />
+                                            <input type="tel" class="form-control" id="contactPhoneInput" name="phone" />
                                             <div class="invalid-feedback">Please enter phone.</div>
                                         </div>
                                         <div class="col-md-12">
                                             <label for="contactTextarea" class="form-label">Message</label>
-                                            <textarea class="form-control" id="contactTextarea" placeholder="Write to us" rows="4" required></textarea>
+                                            <textarea class="form-control" id="contactTextarea" name="message" placeholder="Write to us" rows="4" required></textarea>
                                             <div class="invalid-feedback">Please enter a message.</div>
                                         </div>
                                         <div class="d-grid">

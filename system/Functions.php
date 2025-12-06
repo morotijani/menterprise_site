@@ -220,6 +220,7 @@
 	        $mail->AddReplyTo($from, $from_name);
 	        $mail->Subject = $subject;
 	        $mail->Body = $body;
+			$mail->setFrom(MAIL_EMAIL, 'M.Enterprise Contact Form');
 	        $mail->AddAddress($to);
 	        $mail->send();
 	        return true;
