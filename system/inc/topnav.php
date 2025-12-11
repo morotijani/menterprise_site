@@ -28,6 +28,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= PROOT; ?>news">News</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= PROOT; ?>gallery">Gallery</a>
+                            </li>
                         </ul>
                         <div class="mt-3 mt-lg-0 d-flex align-items-center">
                             <!-- <a href="<?= PROOT; ?>news" class="btn btn-light mx-2">News</a> -->
