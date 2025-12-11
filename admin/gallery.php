@@ -61,7 +61,7 @@
     <div class="container py-4">
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"> 
             <a href="dashboard" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
-                <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="40" height="32" class="me-2" /> <span class="fs-4">M.Enterprice</span> 
+                <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="40" height="32" class="me-2" /> <span class="fs-4">M.Enterprise</span> 
             </a>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto"> 
                 <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs">Blog</a> 
