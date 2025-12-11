@@ -62,21 +62,46 @@
                     <tbody>
                         <?php foreach($contacts as $c): ?>
                         <tr>
-                            <td><?=htmlspecialchars($c['fname'] . ' ' . $c['lname'])?></td>
-                            <td><?=htmlspecialchars($c['email'])?></td>
-                            <td><?=htmlspecialchars($c['compnay_name'])?></td>
-                            <td><?=htmlspecialchars($c['phone_number'])?></td>
-                            <td><?=nl2br(htmlspecialchars(substr($c['message'], 0, 50))) . (strlen($c['message']) > 50 ? '...' : '')?></td>
-                            <td><?=htmlspecialchars($c['created_at'])?></td>
+                            <td><?= sanitize($c['fname'] . ' ' . $c['lname']); ?></td>
+                            <td><?= sanitize($c['email']); ?></td>
+                            <td><?= sanitize($c['compnay_name']); ?></td>
+                            <td><?= sanitize($c['phone_number']); ?></td>
+                            <td><?=nl2br( sanitize(substr($c['message'], 0, 50))) . (strlen($c['message']) > 50 ? '...' : ''); ?></td>
+                            <td><?= sanitize($c['created_at']); ?></td>
                             <td>
-                                <a href="contacts?delete=<?=$c['contact_id']?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this entry?')">Delete</a>
+                                <!-- modal view -->
+                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#viewContactModal<?= $c['contact_id']; ?>">View</button>
+                                <a href="contacts?delete=<?= $c['contact_id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this entry?')">Delete</a>
                             </td>
                         </tr>
+
+                        <!-- modal details -->
+                        <div class="modal fade" id="viewContactModal<?= $c['contact_id']; ?>" tabindex="-1" aria-labelledby="viewContactModalLabel<?= $c['contact_id']; ?>" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="viewContactModalLabel<?= $c['contact_id']; ?>">Contact Details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>Name:</strong> <?= sanitize($c['fname'] . ' ' . $c['lname']); ?></p>
+                                        <p><strong>Email:</strong> <?= sanitize($c['email']); ?></p>
+                                        <p><strong>Company:</strong> <?= sanitize($c['compnay_name']); ?></p>
+                                        <p><strong>Phone:</strong> <?= sanitize($c['phone_number']); ?></p>
+                                        <p><strong>Message:</strong><br><?=nl2br( sanitize($c['message'])); ?></p>
+                                        <p><strong>Date:</strong> <?= sanitize($c['created_at']); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <?php endforeach;?>
                     </tbody>
                 </table>
             </div>
         <?php endif; ?>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 </body>
 </html>
