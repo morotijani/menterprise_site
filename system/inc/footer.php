@@ -12,7 +12,7 @@
                                 <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="60" height="60" alt="logo" />
                             </a>
                         </div>
-                        <p class="mb-0">Explore exciting opportunities in the exploration, mining, and trading of gold and diamonds. Work with MEG.</p>
+                        <p class="mb-0">Explore exciting opportunities in the exploration, mining, and trading of gold. Work with MEG.</p>
                     </div>
                 </div>
                 <div class="offset-xl-2 col-xl-5 col-md-6 col-lg-6">

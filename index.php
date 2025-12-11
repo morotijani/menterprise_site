@@ -21,7 +21,7 @@
                         <div class="d-flex flex-column gap-4">
                             <h1 class="text-white-stable display-4 mb-0">Embarking On A Journey Of Mining Mastery</h1>
                             <p class="mb-0 text-white-50 lead px-lg-10">
-                               Empowering Global Ventures in Exploration, Mining, and Gold and Diamond Trading with M. Enterprise Ghana Limited
+                               Empowering Global Ventures in Exploration, Mining, and Gold Trading with M. Enterprise Ghana Limited
                             </p>
                         </div>
                         <div class="d-md-flex d-grid align-items-center justify-content-md-center gap-4">
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <h2 class="mb-4">We provide expert consultancy in exploration, mining as well as Gold and Diamond trading within Ghana and beyond. We have established ourselves strategically to assist mining groups around the globe with practical skill to improve the mining industry. <br>We provide consultancy services into four (4) thematic areas.</h2>
+            <h2 class="mb-4">We provide expert consultancy in exploration, mining as well as Gold trading within Ghana and beyond. We have established ourselves strategically to assist mining groups around the globe with practical skill to improve the mining industry. <br>We provide consultancy services into four (4) thematic areas.</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card-grid" data-cue="zoomIn">
@@ -175,9 +175,9 @@
                     <div class="col-md-6">
                         <div class="card-grid" data-cue="zoomIn">
                             <div class="card-grid-inner">
-                                <h3 class="card-grid-heading">Gold and Diamond Trading</h3>
+                                <h3 class="card-grid-heading">Gold Trading</h3>
                                 <div class="card-grid-text">
-                                    <p class="mb-0">Gold Purchasing and Supply, Exploration of Gold/Diamond.</p>
+                                    <p class="mb-0">Gold Purchasing and Supply, Exploration of Gold.</p>
                                     <a href="#!" class="icon-link icon-link-hover card-grid-link mt-4">
                                         Learn More
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -248,7 +248,7 @@
                         <div class="mb-4">
                             <small class="text-uppercase ls-md fw-semibold">who we are</small>
                             <h2 class="h1 mt-4 mb-3">We are a registered Ghanaian company established in 2010.</h2>
-                            <p class="mb-3">under the government of Ghana Act 1962(N0. 151). We provide expert consultancy in exploration, mining as well as Gold and Diamond trading within Ghana and beyond</p>
+                            <p class="mb-3">under the government of Ghana Act 1962(N0. 151). We provide expert consultancy in exploration, mining as well as Gold trading within Ghana and beyond</p>
                             <p class="mb-0">We have established ourselves strategically to assist mining groups around the globe with practical skill to improve the mining industry.</p>
                         </div>
 
@@ -402,7 +402,7 @@
                     <div class="card shadow-sm" data-cue="slideInRight">
                         <div class="card-body">
                             <p class="mb-5 lead">
-                                "As a gold trader, MEG stands out as a trusted partner in the gold and diamond trading industry. Their expertise and extensive network have facilitated smooth transactions, allowing us to expand our business."
+                                "As a gold trader, MEG stands out as a trusted partner in the gold trading industry. Their expertise and extensive network have facilitated smooth transactions, allowing us to expand our business."
                             </p>
                             <div class="d-md-flex align-items-center justify-content-between">
                                 <div class="d-flex align-items-center mb-3 mb-lg-0">

@@ -32,7 +32,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <a href="#permits"  name="permits"></a>
+                    <a href="#permits" name="permits"></a>
                     <div class="mb-6 mb-lg-0">
                         <small class="text-primary text-uppercase ls-md fw-bold" name="permits">Permits</small>
 
