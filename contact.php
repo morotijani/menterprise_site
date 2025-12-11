@@ -127,10 +127,9 @@
                                 </div>
                                 <div>
                                     <h4>Phone Us :</h4>
-                                    <p class="mb-0"><a href="tel:+233 (0) 509 04 2295" class="text-warning">+233 (0) 509 04 2295</a>
-                                    <p class="mb-0"><a href="tel:+233 (0) 242 66 3111" class="text-warning">+233 (0) 242 66 3111</a>
-                                    <p class="mb-0"><a href="tel:+233 (0) 540 94 4188" class="text-warning">+233 (0) 540 94 4188</a>
                                     <p class="mb-0"><a href="tel:+233 (0) 240 67 7938" class="text-warning">+233 (0) 240 67 7938</a>
+                                    <p class="mb-0"><a href="tel:+233 (0) 540 94 4188" class="text-warning">+233 (0) 540 94 4188</a>
+                                    <p class="mb-0"><a href="tel:+233 (0) 541 11 3697" class="text-warning">+233 (0) 541 11 3697</a>
                                     </p>
                                 </div>
                             </div>

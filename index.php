@@ -448,27 +448,27 @@
                         <div class="swiper-wrapper pb-6">
                             <div class="swiper-slide">
                                 <figure class="text-center">
-                                        <img src="<?= PROOT; ?>assets/media/client-01.png" class="img-fluid" width="120" height="48" alt="logo" />
+                                        <img src="<?= PROOT; ?>assets/media/client-01.png" class="img-fluid" width="100" alt="logo" />
                                     </figure>
                                 </div>
                                 <div class="swiper-slide">
                                     <figure class="text-center">
-                                        <img src="<?= PROOT; ?>assets/media/client-02.png" class="img-fluid" width="120" height="48" alt="logo" />
+                                        <img src="<?= PROOT; ?>assets/media/client-02.png" class="img-fluid" width="100" alt="logo" />
                                     </figure>
                                 </div>
                                 <div class="swiper-slide">
                                     <figure class="text-center">
-                                        <img src="<?= PROOT; ?>assets/media/client-03.png" class="img-fluid" width="120" height="48" alt="logo" />
+                                        <img src="<?= PROOT; ?>assets/media/client-03.png" class="img-fluid" width="100" alt="logo" />
                                     </figure>
                                 </div>
                                 <div class="swiper-slide">
                                     <figure class="text-center">
-                                    <img src="<?= PROOT; ?>assets/media/client-04.png" class="img-fluid" width="120" height="48" alt="logo" />
+                                    <img src="<?= PROOT; ?>assets/media/client-04.png" class="img-fluid" width="100" alt="logo" />
                                 </figure>
                             </div>
                             <div class="swiper-slide">
                                 <figure class="text-center">
-                                    <img src="<?= PROOT; ?>assets/media/client-03.png" class="img-fluid" width="120" height="48" alt="logo" />
+                                    <img src="<?= PROOT; ?>assets/media/client-03.png" class="img-fluid" width="100" alt="logo" />
                                 </figure>
                             </div>
                             <!-- Add more slides as needed -->

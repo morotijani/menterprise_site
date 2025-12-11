@@ -32,8 +32,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
+                    <a href="#permits"  name="permits"></a>
                     <div class="mb-6 mb-lg-0">
-                        <small class="text-primary text-uppercase ls-md fw-bold">Permits</small>
+                        <small class="text-primary text-uppercase ls-md fw-bold" name="permits">Permits</small>
 
                         <div class="my-4">
                             <h2 class="mb-3">Permits.</h2>
@@ -147,7 +148,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="mb-6 mb-lg-0">
-                        <small class="text-primary text-uppercase ls-md fw-bold">Reclamation</small>
+                        <a href="#reclamation" name="reclamation"></a>
+                        <small class="text-primary text-uppercase ls-md fw-bold" name="reclamation">Reclamation</small>
 
                         <div class="my-4">
                             <h2 class="mb-3">Land Reclamation Project.</h2>
