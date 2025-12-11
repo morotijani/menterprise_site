@@ -315,7 +315,7 @@
             <div class="row gy-5">
                 <div class="col-lg-4 col-md-6 col-12">
                     <figure class="mb-4 zoom-img">
-                        <img src="<?= PROOT; ?>assets/media/team/Suleiman-Imam-Mohammed.png" alt="team" class="rounded-3 img-fluid" />
+                        <img src="<?= PROOT; ?>assets/media/team/ceo.png" alt="team" class="rounded-3 img-fluid" style="height: 300px;" />
                     </figure>
                     <div class="mb-4">
                         <h4 class="mb-1"><a href="#!" class="text-reset">Imam Suleiman Mohammed</a></h4>
@@ -341,7 +341,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <figure class="mb-4 zoom-img">
-                        <img src="<?= PROOT; ?>assets/media/team/Isaac-Osei-Appah.jpg" alt="team" class="rounded-3 img-fluid" />
+                        <img src="<?= PROOT; ?>assets/media/team/Isaac-Osei-Appah.jpg" alt="team" class="rounded-3 img-fluid"  style="height: 300px;" />
                     </figure>
                     <div class="mb-4">
                         <h4 class="mb-1"><a href="#!" class="text-reset">Isaac Osei Appah</a></h4>
@@ -367,7 +367,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <figure class="mb-4 zoom-img">
-                        <img src="<?= PROOT; ?>assets/media/team/Alhassan-Mohammed.png" alt="team" class="rounded-3 img-fluid" />
+                        <img src="<?= PROOT; ?>assets/media/team/Alhassan-Mohammed.png" alt="team" class="rounded-3 img-fluid"  style="height: 300px;" />
                     </figure>
                     <div class="mb-4">
                         <h4 class="mb-1"><a href="#!" class="text-reset">Alhassan Mohammed</a></h4>
