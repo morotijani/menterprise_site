@@ -87,7 +87,7 @@
                                  fill="" />
                            </svg>
                         </span>
-                        <h4 class="mb-0 card-text fs-5">Gold and Diamond Trading</h4>
+                        <h4 class="mb-0 card-text fs-5">Gold Trading</h4>
                      </a>
                   </div>
                   <div class="col-lg-3 col-md-4 col-6">
@@ -225,10 +225,10 @@
             <div class="row align-items-lg-center">
                 <div class="col-md-6 col-lg-5 order-2">
                     <div class="mb-5">
-                        <h2 class="mb-2">Gold And Diamond Trading</h2>
+                        <h2 class="mb-2">Gold Trading</h2>
                         <p class="">Ghana is well endowed with substantial mineral resources, the major ones being gold and diamonds. The country has seen strong economic growth recently due to it mineral resource exploitation, its GDP grew 8.5 percent in 2017. Aside from gold, the country also exports mineral resource such  as diamonds. Ghana’s annual gold revenues rose to $3.52 billion in 2017, a 10.2-percent increase from 2016. This is thought to be the result of greater output from the country’s mines, as per the Ghana Chamber of Mines Gold, the predominant mineral produced in the country, accounts for over 90% of all mineral revenues annually over the past two decades.
                         </p>
-                        <p>M Enterprise Ghana Ltd Trade in Gold Purchasing and Supply and Can assist in the exploration of Gold/Diamond.</p>
+                        <p>M Enterprise Ghana Ltd Trade in Gold Purchasing and Supply and Can assist in the exploration of Gold.</p>
                         <p>The trading procedure involves: Assaying, invoicing, pack listing, documentation for customs clearance and finally Airway bills with details of exporter, to the point of destination.</p>
                         <p class="mb-0">There is absolutely no gold shipment under credit terms, the Bank of Ghana (BOG) regulations does not allow for shipment of gold before Payment.</p>
                     </div>

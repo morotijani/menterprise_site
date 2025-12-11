@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <meta name="description" content="Empowering Global Ventures in Exploration, Mining, and Gold and Diamond Trading with M. Enterprise Ghana Limited." />
+    <meta name="description" content="Empowering Global Ventures in Exploration, Mining, and Gold Trading with M. Enterprise Ghana Limited." />
     <link rel="canonical" href="https://menterpriseghanalimited.com" />
     
     <!-- Primary author / publisher -->
@@ -15,7 +15,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Menterprise — Ghana Limited" />
-    <meta property="og:description" content="Empowering Global Ventures in Exploration, Mining, and Gold and Diamond Trading with M. Enterprise Ghana Limited." />
+    <meta property="og:description" content="Empowering Global Ventures in Exploration, Mining, and Gold Trading with M. Enterprise Ghana Limited." />
     <meta property="og:url" content="https://menterpriseghanalimited.com/" />
     <meta property="og:site_name" content="Menterprise" />
     
@@ -29,7 +29,7 @@
     <meta name="twitter:site" content="@Menterprise" />
     <meta name="twitter:creator" content="@Menterprise" />
     <meta name="twitter:title" content="Menterprise — Ghana Limited" />
-    <meta name="twitter:description" content="Empowering Global Ventures in Exploration, Mining, and Gold and Diamond Trading with M. Enterprise Ghana Limited." />
+    <meta name="twitter:description" content="Empowering Global Ventures in Exploration, Mining, and Gold Trading with M. Enterprise Ghana Limited." />
     <meta name="twitter:image" content="https://menterpriseghanalimited.com/assets/media/logo/logo.png" />
     
     <!-- Theme color for mobile browsers -->
@@ -71,7 +71,7 @@
                     "author": {
                         "@id": "https://menterpriseghanalimited.com#org"
                     },
-                    "description": "Empowering Global Ventures in Exploration, Mining, and Gold and Diamond Trading with M. Enterprise Ghana Limited.",
+                    "description": "Empowering Global Ventures in Exploration, Mining, and Gold Trading with M. Enterprise Ghana Limited.",
                     "image": "https://menterpriseghanalimited.com/assets/media/logo/logo.png"
                  }
             ]

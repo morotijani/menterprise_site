@@ -36,10 +36,10 @@
                         <h1 class="mb-3">Who we are</h1>
                         <p class="lead mb-4">Established In Ghana Since 2010.</p>
                         <p class="mb-6 me-xl-6">
-                        We are a registered Ghanaian company established in 2010 under the government of Ghana Act 1962(N0. 151). We provide expert consultancy in exploration, mining as well as Gold and Diamond trading within Ghana and beyond. We have established ourselves strategically to assist mining groups around the globe with practical skill to improve the mining industry.
+                        We are a registered Ghanaian company established in 2010 under the government of Ghana Act 1962(N0. 151). We provide expert consultancy in exploration, mining as well as Gold trading within Ghana and beyond. We have established ourselves strategically to assist mining groups around the globe with practical skill to improve the mining industry.
                         </p>
                         <p class="mb-6 me-xl-6">
-                        M. Enterprise Ghana (MEG) Limited support investors (both domestic and foreign) in gold and diamond exploration, mining, purchasing and supply. We are among the leading mining services industries in West-Africa with our head office in Konongo, Ashanti Region of Ghana. We have a huge base of satisfied clients within Africa and other continents at large.
+                        M. Enterprise Ghana (MEG) Limited support investors (both domestic and foreign) in gold exploration, mining, purchasing and supply. We are among the leading mining services industries in West-Africa with our head office in Konongo, Ashanti Region of Ghana. We have a huge base of satisfied clients within Africa and other continents at large.
                         </p>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                                 </svg>
-                                <span class="ms-2">We seek to be the number one destination for exploration, mining and Gold/Diamond trading consultant across the globe.</span>
+                                <span class="ms-2">We seek to be the number one destination for exploration, mining and Gold trading consultant across the globe.</span>
                             </li>
                         </ul>
 
@@ -169,7 +169,7 @@
                         <small class="text-warning text-uppercase ls-md fw-semibold">What We Do</small>
                         <div class="mb-5 mt-4">
                             <h2 class="mb-3">We supply mining equipment and logistics for Alluvial Prospecting.</h2>
-                            <p class="lead mb-0">We work with individuals, groups and companies in the mining sector to boost their confidence in the Gold and Diamond trade within the sector.</p>
+                            <p class="lead mb-0">We work with individuals, groups and companies in the mining sector to boost their confidence in the Gold trade within the sector.</p>
                         </div>
                         <ul class="list-unstyled mb-5">
                            <li class="mb-2 d-flex">
@@ -234,7 +234,7 @@
 
                     <h4>Resource for Success and Development</h4>
                     <p class="">MEG strive to source foreign and local Partnership to enhance and promote Mining in West Africa, as a tool for Development.</p>
-                    <p class="mb-0">To attract private foreign investors to enter into joint-venture agreements with Gold and Diamond mining firms in Africa.</p>
+                    <p class="mb-0">To attract private foreign investors to enter into joint-venture agreements with Gold mining firms in Africa.</p>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="mb-5">
@@ -245,7 +245,7 @@
                     </div>
 
                     <h4>Optimize Operations</h4>
-                    <p class="">To acquire potential Gold and Diamond Concessions in the West African Sub-region with Ghana as the main concentration.</p>
+                    <p class="">To acquire potential Gold Concessions in the West African Sub-region with Ghana as the main concentration.</p>
                     <p class="">To be a conduit of lucrative information dissemination to investors.</p>
                     <p class="mb-0">To improve continuously our operations within the West Africa Sub region.</p>
                 </div>
@@ -308,7 +308,7 @@
                     <div class="text-center mb-7">
                         <small class="text-uppercase ls-md fw-semibold">Meet Our Team</small>
                         <h2 class="mt-3">Our Leadership Team</h2>
-                        <p class="mb-0">We have personnel with over 10 years’ experience in the area of mining services and Gold/Diamond trading. Our experts are in the field of Business Management, Geological Engineering and science, Mineral Engineering, Geodetic Engineering and Information Technology.</p>
+                        <p class="mb-0">We have personnel with over 10 years’ experience in the area of mining services and Gold trading. Our experts are in the field of Business Management, Geological Engineering and science, Mineral Engineering, Geodetic Engineering and Information Technology.</p>
                     </div>
                 </div>
             </div>
