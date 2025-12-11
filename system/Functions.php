@@ -576,6 +576,35 @@
 	    }
 	}
 
+	function createThumbnail($src, $dest, $targetWidth = 200, $targetHeight = 200) {
+		$info = getimagesize($src);
+		if ($info === false) return false;
+
+		$width = $info[0];
+		$height = $info[1];
+		$mime = $info['mime'];
+
+		switch ($mime) {
+			case 'image/jpeg': $image = imagecreatefromjpeg($src); break;
+			case 'image/png':  $image = imagecreatefrompng($src); break;
+			case 'image/gif':  $image = imagecreatefromgif($src); break;
+			default: return false;
+		}
+
+		$thumb = imagecreatetruecolor($targetWidth, $targetHeight);
+		imagecopyresampled($thumb, $image, 0,0,0,0, $targetWidth, $targetHeight, $width, $height);
+
+		switch ($mime) {
+			case 'image/jpeg': imagejpeg($thumb, $dest); break;
+			case 'image/png':  imagepng($thumb, $dest); break;
+			case 'image/gif':  imagegif($thumb, $dest); break;
+		}
+
+		imagedestroy($image);
+		imagedestroy($thumb);
+		return true;
+	}
+
 	function yearDropdown($startYear, $endYear, $class) {           
 	    //echo each year as an option     
 	    for ($i = $startYear; $i <= $endYear; $i++) { 

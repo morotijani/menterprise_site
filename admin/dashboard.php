@@ -28,7 +28,7 @@
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto"> 
                 <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="blogs">Blog</a> 
                 <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contacts">Contacts</a> 
-                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Sites</a> 
+                <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="gallery">Gallery</a> 
                 <a class="py-2 link-body-emphasis text-decoration-none" href="logout">Logout</a> 
             </nav> 
         </div>
