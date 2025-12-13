@@ -315,11 +315,45 @@
             <div class="row gy-5">
                 <div class="col-lg-4 col-md-6 col-12">
                     <figure class="mb-4 zoom-img">
-                        <img src="<?= PROOT; ?>assets/media/team/ceo.png" alt="team" class="rounded-3 img-fluid" style="height: 300px;" />
+                        <img src="<?= PROOT; ?>assets/media/team/Suleiman-Imam-Mohammed.png" alt="team" class="rounded-3 img-fluid" style="height: 300px;" />
                     </figure>
                     <div class="mb-4">
-                        <h4 class="mb-1"><a href="#!" class="text-reset">Imam Suleiman Mohammed</a></h4>
+                        <h4 class="mb-1"><a href="#team1Modal" data-bs-toggle="modal" data-bs-target="#team1Modal" class="text-reset">Imam Suleiman Mohammed</a></h4>
                         <span class="fs-6">CEO</span>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="team1Modal" tabindex="-1" aria-labelledby="team1ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="card">
+                                    <div class="row align-items-center">
+                                        <div class="col-xl-4 col-lg-5 col-md-6 overflow-hidden d-none d-lg-block">
+                                            <img src="<?= PROOT; ?>assets/media/team/Suleiman-Imam-Mohammed-long.png" class="img-fluid rounded-start-md-3 rounded-top-md-0 rounded-top-3" alt="testimonials" />
+                                        </div>
+                                        <div class="col-xl-8 col-lg-7 col-md-12">
+                                            <div class="card-body p-4 px-xl-0">
+                                                <div class="mb-6 text-inverse">
+                                                    <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="30" alt="ipsum" />
+                                                </div>
+                                                <p class="card-text lead mb-7">
+                                                    Suleiman is a Highly accomplished CEO with 15+ years of experience leading and scaling
+                                                    businesses in a variety of industries, including Mining, Entrepreneurship, and
+                                                    Commodity Trading. Proven track record of driving growth, improving efficiency, and
+                                                    maximizing profits. A well versed in assessing risk, developing solutions, and
+                                                    implementing positive changes to achieve sustainability and growth in challenging
+                                                    market conditions. Adept at building and strengthening business and investor
+                                                    relationships.
+                                                </p>
+
+                                                <h5 class="mb-0">Imam Suleiman Mohammed</h5>
+                                                <small class="text-body-tertiary">Chief Executive Officers profile</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <span>
@@ -341,11 +375,39 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <figure class="mb-4 zoom-img">
-                        <img src="<?= PROOT; ?>assets/media/team/Isaac-Osei-Appah.jpg" alt="team" class="rounded-3 img-fluid"  style="height: 300px;" />
+                        <img src="<?= PROOT; ?>assets/media/team/Isaac-Osei-Appah.JPG" alt="team" class="rounded-3 img-fluid"  style="height: 300px;" />
                     </figure>
                     <div class="mb-4">
-                        <h4 class="mb-1"><a href="#!" class="text-reset">Isaac Osei Appah</a></h4>
+                        <h4 class="mb-1"><a href="#!" data-bs-toggle="modal" data-bs-target="#team2Modal" class="text-reset">Isaac Osei Appah</a></h4>
                         <span class="fs-6">Head of Administration</span>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="team2Modal" tabindex="-1" aria-labelledby="team2ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="card">
+                                    <div class="row align-items-center">
+                                        <div class="col-xl-4 col-lg-5 col-md-6 overflow-hidden d-none d-lg-block">
+                                            <img src="<?= PROOT; ?>assets/media/team/Isaac-Osei-Appah-long.JPG" class="img-fluid rounded-start-md-3 rounded-top-md-0 rounded-top-3" alt="testimonials" />
+                                        </div>
+                                        <div class="col-xl-8 col-lg-7 col-md-12">
+                                            <div class="card-body p-4 px-xl-0">
+                                                <div class="mb-6 text-inverse">
+                                                    <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="30" alt="ipsum" />
+                                                </div>
+                                                <p class="card-text lead mb-7">
+                                                    Isaac Osei Appah is an experienced administrative and operations professional with a strong competency in procurement, stock management, workforce coordination, and organizational systems improvement. With a career spanning retail, customer-service-driven industries, and mining-sector operations, he has established himself as a dependable, execution-focused leader with a consistent record of operational enhancement, resource management, and administrative efficiency.
+                                                </p>
+
+                                                <h5 class="mb-0">Isaac Osei Appah</h5>
+                                                <small class="text-body-tertiary">Head of Administration</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <span>
@@ -370,9 +432,40 @@
                         <img src="<?= PROOT; ?>assets/media/team/Alhassan-Mohammed.png" alt="team" class="rounded-3 img-fluid"  style="height: 300px;" />
                     </figure>
                     <div class="mb-4">
-                        <h4 class="mb-1"><a href="#!" class="text-reset">Alhassan Mohammed</a></h4>
+                        <h4 class="mb-1"><a href="#!" data-bs-toggle="modal" data-bs-target="#team3Modal" class="text-reset">Alhassan Mohammed</a></h4>
                         <span class="fs-6">Head of Explorations</span>
                     </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="team3Modal" tabindex="-1" aria-labelledby="team3ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="card">
+                                    <div class="row align-items-center">
+                                        <div class="col-xl-4 col-lg-5 col-md-6 overflow-hidden d-none d-lg-block">
+                                            <img src="<?= PROOT; ?>assets/media/team/Alhassan-Mohammed.png" class="img-fluid rounded-start-md-3 rounded-top-md-0 rounded-top-3" alt="testimonials" />
+                                        </div>
+                                        <div class="col-xl-8 col-lg-7 col-md-12">
+                                            <div class="card-body p-4 px-xl-0">
+                                                <div class="mb-6 text-inverse">
+                                                    <img src="<?= PROOT; ?>assets/media/logo/logo.png" width="30" alt="ipsum" />
+                                                </div>
+                                                <p class="card-text lead mb-7">
+                                                    Alhassan Mohammed is a seasoned mining professional with more than two decades of hands-on and leadership experience in the exploration and development of mineral resources. As Director of Explorations at M. Enterprise Ghana Ltd, he provides strategic oversight for all exploration programs, ensuring technical excellence, operational efficiency, and alignment with the company’s long-term growth objectives.
+                                                    <br>
+                                                    His expertise is deeply rooted in underground mining operations, where he has accumulated extensive field experience across multiple geological environments. Alhassan is recognized for his strong command of underground mapping, orebody modelling, drilling supervision, reserve estimation, and the design of exploration strategies that optimise resource discovery while upholding strict safety and environmental standards
+                                                </p>
+
+                                                <h5 class="mb-0">Alhassan Mohammed</h5>
+                                                <small class="text-body-tertiary">Head of Explorations</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <span>
                         <a href="#!" class="btn btn-instagram btn-icon">

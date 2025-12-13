@@ -16,10 +16,32 @@
 
         if (!empty($_FILES['image']['name'])) {
             $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-            $imageName = uniqid() . '.' . $ext;
-            $location = BASEURL . 'assets/media/blog/' . $imageName;
-            move_uploaded_file($_FILES['image']['tmp_name'], $location);
+            $type = $_FILES['image']['type'];
+            $size = $_FILES['image']['size'];
+            $error = $_FILES['image']['error'];
+            $name = $_FILES['image']['name'];
+
+            // Validate file type (only jpg, jpeg, png, gif)
+            $allowedTypes = ['image/jpeg','image/png','image/gif'];
+            if (!in_array($type, $allowedTypes)) {
+                $errors[] = "Invalid file type: " . sanitize($name) . "<br>";
+            }
+
+            // Validate file size (10MB max)
+            if ($size > 10 * 1024 * 1024) {
+                $errors[] = "File too large (max 10MB): " . sanitize($name) . "<br>";
+            }
+
+            if ($error === UPLOAD_ERR_OK) {
+                // File uploaded successfully
+                $imageName = uniqid() . '.' . $ext;
+                $location = BASEURL . 'assets/media/blog/' . $imageName;
+                move_uploaded_file($_FILES['image']['tmp_name'], $location);
+            } else {
+                $errors[] = "Error uploading file: " . sanitize($name) . "<br>";
+            }
         }
+        
         if (empty($title) || empty($content)) { $errors[] = 'Title and content required'; }
 
         if (empty($errors)) {
@@ -39,6 +61,14 @@
     <title>New Post</title>
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #preview img {
+            width: 120px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            padding: 3px;
+        }
+    </style>
 </head>
 <body>
     <div class="container py-4">
@@ -64,7 +94,8 @@
                 <input name="title" class="form-control" placeholder="Title" required>
             </div>
             <div class="mb-2">
-                <input name="image" type="file" class="form-control" accept="image/*" required>
+                <input name="image" type="file" id="image" class="form-control" accept="image/*" required>
+                <div id="preview"></div>
             </div>
              <div class="mb-2">
                 <label for="category_id" class="form-label">Category</label>
@@ -91,6 +122,33 @@
     <script src="<?= PROOT; ?>assets/js/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/87lq0a69wq228bimapgxuc63s4akao59p3y5jhz37x50zpjk/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script type="text/javascript">
+        $(document).ready(function(){
+            // Preview selected images
+            $("#image").on("change", function() {
+                $("#preview").html(""); // clear old previews
+                // only one image file
+                var file = this.files[0];
+                
+                if (!file.type.match('image.*')) {
+                    alert(file.name + " is not an image file.");
+                    return
+                    // continue;
+                }
+
+                // Validate file size (10MB = 10 * 1024 * 1024)
+                if (file.size > 10 * 1024 * 1024) {
+                    alert(file.name + " exceeds 10MB size limit.");
+                    return;
+                    // continue;
+                }
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $("#preview").append("<img src='" + e.target.result + "'>");
+                }
+                reader.readAsDataURL(file);
+            });
+        });
         
         // Testarea Editor
         // tinymce.init({
