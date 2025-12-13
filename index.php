@@ -12,7 +12,7 @@
    <!--Hero start-->
    <section class="position-relative py-10">
       <video class="w-100" autoplay muted loop style="object-fit: cover" playsinline>
-            <source src="<?= PROOT; ?>assets/media/hero.mp4" type="video/mp4" />
+            <source src="<?= PROOT; ?>assets/media/cover.mp4" type="video/mp4" />
         </video>
         <div class="container position-relative py-lg-10" data-cue="fadeIn">
             <div class="row py-lg-10 justify-content-center text-center">
