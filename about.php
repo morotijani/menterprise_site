@@ -108,28 +108,15 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 col-md-6 col-12" data-cue="slideInLeft">
                     <div data-cue="fadeIn">
-                        <small class="text-warning text-uppercase ls-md fw-semibold">Our Mission</small>
+                        <small class="text-warning text-uppercase ls-md fw-semibold">Vision & Mission</small>
                         <div class="mb-5 mt-4">
-                            <h2 class="mb-3">Build the perfect workflow for every project.</h2>
-                            <p class="mb-0 lead">M. Enterprise Ghana Ltd (MEG) has a focus to provide excellent and reliable services to its cherished clients across the globe.</p>
+                            <h2 class="mb-3">Our Vision</h2>
+                            <p class="mb-0 lead">To become the world's most trusted exploration, mining, and gold trading consultancy, recognized for excellence, innovation, integrity, and outstanding service to every client and stakeholder.</p>
                         </div>
-
-                        <ul class="list-unstyled mb-5">
-                            <li class="mb-2 d-flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
-                                    <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                </svg>
-                                <span class="ms-2">We aspire to be the industry leader that provides quality service that exceeds the expectations of our clients and all other stakeholders.</span>
-                            </li>
-                            <li class="mb-2 d-flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
-                                    <path
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                </svg>
-                                <span class="ms-2">We seek to be the number one destination for exploration, mining and Gold trading consultant across the globe.</span>
-                            </li>
-                        </ul>
+                        <div class="mb-5 mt-4">
+                            <h2 class="mb-3">Our Mission</h2>
+                            <p class="mb-0 lead">To simplify the acquisition of precious metals for buyers while promoting environmental sustainability and regulatory compliance.</p>
+                        </div>
 
                         <a href="javascript:;" class="icon-link icon-link-hover">
                             Learn More
